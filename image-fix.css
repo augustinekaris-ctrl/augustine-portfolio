@@ -39,3 +39,19 @@ body{transition:opacity .18s ease,transform .18s ease}body.page-leaving{opacity:
 .project-grid>*{min-width:0}.project-meta{gap:16px}.project-meta>div{min-width:0}.project-meta h3,.project-meta p{overflow-wrap:anywhere}.secuviz{background:#0c1117}
 @media(max-width:1100px) and (min-width:901px){.project-grid{grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);gap:22px}}
 @media(max-width:900px){.project,.project-featured{width:100%;grid-row:auto}.project-visual:has(.project-cover),.project-featured .project-visual:has(.project-cover){width:100%;height:auto;min-height:0;aspect-ratio:8/5}.project-cover{max-width:100%;transform-origin:center}.project:hover .project-cover{transform:scale(1.02)}}
+
+/* Stable asymmetric project grid */
+.project-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(320px,1fr);column-gap:clamp(24px,3vw,48px);row-gap:clamp(32px,4vw,56px);align-items:start}
+.projects-featured,.projects-side{min-width:0;width:100%;max-width:100%}
+.projects-side{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(32px,4vw,56px);align-content:start}
+.project{position:relative;display:block;width:100%;max-width:100%;min-width:0;height:auto;box-sizing:border-box}
+.project-featured{grid-row:auto}
+.project-visual,.project-featured .project-visual{width:100%;max-width:100%;height:auto;min-height:0;box-sizing:border-box;overflow:hidden}
+.project-visual:has(.project-cover),.project-featured .project-visual:has(.project-cover){aspect-ratio:8/5;height:auto;min-height:0}
+.project-cover{width:100%;max-width:100%;height:100%;object-fit:contain;object-position:center;display:block;transform-origin:center}
+.project:hover .project-visual{transform:none;border-color:#555d65}
+.project:hover .project-cover{transform:scale(1.025)}
+.project-meta{width:100%;max-width:100%;min-width:0;box-sizing:border-box;flex-wrap:wrap}
+.project-meta>div{min-width:0;max-width:100%}.project-meta h3,.project-meta p{max-width:100%;overflow-wrap:anywhere}
+@media(max-width:1100px) and (min-width:901px){.project-grid{grid-template-columns:minmax(0,1.45fr) minmax(300px,1fr);column-gap:24px}.projects-side{gap:32px}}
+@media(max-width:900px){.project-grid{grid-template-columns:minmax(0,1fr);gap:36px}.projects-featured,.projects-side,.project{width:100%;max-width:100%;min-width:0}.projects-side{gap:36px}.project-visual:has(.project-cover),.project-featured .project-visual:has(.project-cover){aspect-ratio:8/5}.project:hover .project-cover{transform:scale(1.015)}}
