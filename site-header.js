@@ -1,7 +1,7 @@
 const SITE_NAV={cv:"/Augustine-Kariuki-CV.pdf",links:[["About","/#about"],["Work","/#work"],["Experience","/#experience"],["Contact","/#contact"]]};
 class SiteHeader extends HTMLElement{
  connectedCallback(){
-  const work=/^\/(ripple-docs|work|projects|case-studies)(\/|$)/.test(location.pathname);
+  const work=/^\/(ripple-docs|secuviz|work|projects|case-studies)(\/|$)/.test(location.pathname);
   this.innerHTML=`<header class="site-header"><a class="site-logo" href="/#home" aria-label="Augustine Kariuki home">AK<span>.</span></a><nav class="site-nav" aria-label="Main navigation">${SITE_NAV.links.map(([l,h])=>`<a href="${h}" class="${work&&l==="Work"?"active":""}">${l}</a>`).join("")}</nav><a class="site-cv" href="${SITE_NAV.cv}" download>Download CV <span>↓</span></a><button class="site-menu-toggle" aria-expanded="false" aria-controls="site-mobile-menu">Menu</button></header><div class="site-mobile-menu" id="site-mobile-menu">${SITE_NAV.links.map(([l,h])=>`<a href="${h}">${l}</a>`).join("")}<a class="mobile-cv" href="${SITE_NAV.cv}" download>Download CV ↓</a></div>`;
   const toggle=this.querySelector(".site-menu-toggle"),menu=this.querySelector(".site-mobile-menu");
   toggle.onclick=()=>{const open=this.classList.toggle("menu-open");toggle.setAttribute("aria-expanded",open);toggle.textContent=open?"Close":"Menu"};
