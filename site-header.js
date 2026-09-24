@@ -1,4 +1,4 @@
-const SITE_NAV={cv:"/Augustine-Kariuki-CV.pdf",links:[["About","/#about"],["Work","/#work"],["Experience","/#experience"],["Contact","/#contact"]]};
+const SITE_NAV={cv:"/Augustine%20cv%202026.pdf",links:[["About","/#about"],["Work","/#work"],["Experience","/#experience"],["Contact","/#contact"]]};
 class SiteHeader extends HTMLElement{
  connectedCallback(){
   const work=/^\/(ripple-docs|secuviz|work|projects|case-studies)(\/|$)/.test(location.pathname);
