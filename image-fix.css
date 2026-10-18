@@ -59,3 +59,17 @@ body{transition:opacity .18s ease,transform .18s ease}body.page-leaving{opacity:
 /* Featured column holds extra projects below the hero card */
 .projects-featured{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(32px,4vw,56px);align-content:start}
 @media(max-width:900px){.projects-featured{gap:36px}}
+
+/* Work filter */
+.work-filter{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 clamp(28px,3vw,44px)}
+.work-filter button{font:inherit;font-size:12px;letter-spacing:.06em;color:#9aa1a7;background:transparent;border:1px solid #252c32;border-radius:30px;padding:11px 18px;cursor:pointer;transition:color .25s,border-color .25s,background .25s}
+.work-filter button:hover{color:#fff;border-color:#555d65}
+.work-filter button.active{color:#05090e;background:#fff;border-color:#fff}
+.work-filter button:focus-visible{outline:2px solid #ff6a00;outline-offset:2px}
+.project[hidden]{display:none!important}
+.project-grid.is-filtered{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(20px,2.4vw,36px);row-gap:clamp(28px,3.5vw,48px)}
+.project-grid.is-filtered .projects-featured,.project-grid.is-filtered .projects-side{display:contents}
+.project-grid.is-filtered .project{order:var(--i)}
+.project-grid.is-filtered .project-visual{aspect-ratio:8/5;height:auto;min-height:0}
+@media(max-width:1100px){.project-grid.is-filtered{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.project-grid.is-filtered{grid-template-columns:1fr}.work-filter{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-right:-5.2vw;padding-right:5.2vw}.work-filter::-webkit-scrollbar{display:none}.work-filter button{flex:none}}
